@@ -2,8 +2,8 @@
 
 BITCOIND=bitcoind
 BITCOINCLI=bitcoin-cli
-B1_FLAGS=
-B2_FLAGS=
+B1_FLAGS=-regtest
+B2_FLAGS=-regtest
 B1=-datadir=1 $(B1_FLAGS)
 B2=-datadir=2 $(B2_FLAGS)
 BLOCKS=1
@@ -18,7 +18,7 @@ start:
 	$(BITCOIND) $(B2) -daemon
 
 generate:
-	$(BITCOINCLI) $(B1) setgenerate true $(BLOCKS)
+	$(BITCOINCLI) $(B1) generate $(BLOCKS)
 
 getinfo:
 	$(BITCOINCLI) $(B1) getinfo
