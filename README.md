@@ -12,7 +12,7 @@ You must have `bitcoind` and `bitcoin-cli` installed on your system and in the
 path unless running this within a [Docker](https://www.docker.io) container
 (see [below](#using-with-docker)).
 
-[![docker stats](http://dockeri.co/image/poliver/bitcoin-dev-box)](https://registry.hub.docker.com/u/poliver/bitcoin-dev-box/)
+[![docker stats](http://dockeri.co/image/jimtou/bitcoinx)](https://registry.hub.docker.com/u/jimtou/bitcoinx/)
 
 ### Running docker container
 
