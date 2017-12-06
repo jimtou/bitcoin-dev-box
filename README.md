@@ -20,6 +20,43 @@ The docker image will run two bitcoin nodes in the background and is meant to be
 
 * `$ docker run -ti --name btcdev -P -p 49020:19000 jimtou/bitcoinx:version2`
 
+## Manual run
+Build the image as:
+cd /home/bitcoinx/BitcoinX
+./autogen.sh
+./configure LDFLAGS="-L/home/theusername/bitcoin/db4/lib/" CPPFLAGS="-I/home/theusername/bitcoin/db4/include/"
+make -s -j5
+
+Then you can start the binary:
+cd /home/bitcoinx
+mkdir 1
+vi bitcoin.conf
+  "# testnet-box functionality
+regtest=1
+dnsseed=0
+upnp=0
+
+# listen on different ports than default testnet
+port=19000
+rpcport=19001
+
+# always run a server, even with bitcoin-qt
+server=1
+
+# enable SSL for RPC server
+#rpcssl=1
+
+rpcallowip=0.0.0.0/0
+
+rpcuser=admin1
+rpcpassword=123
+
+"
+cd ..
+/home/bitcoinx/BitcoinX/src/btc2d -datadir=1 -regtest -daemon
+/home/bitcoinx/BitcoinX/src/btc2-cli -datadir=1 getinfo
+
+
 ## Starting the testnet-box
 
 This will start up two nodes using the two datadirs `1` and `2`. They
