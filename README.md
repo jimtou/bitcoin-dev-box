@@ -28,7 +28,9 @@ cd /home/bitcoinx/BitcoinX
 make -s -j5
 
 
+cd /home/bitcoinx/
 /home/bitcoinx/BitcoinX/src/btc2d -datadir=1 -regtest -daemon
+
 /home/bitcoinx/BitcoinX/src/btc2-cli -datadir=1 getinfo
 
 
