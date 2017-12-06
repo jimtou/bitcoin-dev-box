@@ -31,19 +31,19 @@ Then you can start the binary:
 cd /home/bitcoinx
 mkdir 1
 vi bitcoin.conf
-  "# testnet-box functionality
+  " testnet-box functionality
 regtest=1
 dnsseed=0
 upnp=0
 
-# listen on different ports than default testnet
+
 port=19000
 rpcport=19001
 
-# always run a server, even with bitcoin-qt
+
 server=1
 
-# enable SSL for RPC server
+
 #rpcssl=1
 
 rpcallowip=0.0.0.0/0
