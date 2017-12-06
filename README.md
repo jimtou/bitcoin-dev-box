@@ -27,32 +27,7 @@ cd /home/bitcoinx/BitcoinX
 ./configure LDFLAGS="-L/home/theusername/bitcoin/db4/lib/" CPPFLAGS="-I/home/theusername/bitcoin/db4/include/"
 make -s -j5
 
-Then you can start the binary:
-cd /home/bitcoinx
-mkdir 1
-vi bitcoin.conf
-  " testnet-box functionality
-regtest=1
-dnsseed=0
-upnp=0
 
-
-port=19000
-rpcport=19001
-
-
-server=1
-
-
-#rpcssl=1
-
-rpcallowip=0.0.0.0/0
-
-rpcuser=admin1
-rpcpassword=123
-
-"
-cd ..
 /home/bitcoinx/BitcoinX/src/btc2d -datadir=1 -regtest -daemon
 /home/bitcoinx/BitcoinX/src/btc2-cli -datadir=1 getinfo
 
