@@ -18,6 +18,8 @@ path unless running this within a [Docker](https://www.docker.io) container
 
 The docker image will run two bitcoin nodes in the background and is meant to be attached to allow you to type in commands. The image also exposes the two JSON-RPC ports from the nodes if you want to be able to access them from outside the container.
 
+(in case any missing dependencies, check https://github.com/bitcoin/bitcoin/blob/0.12/doc/build-unix.md)
+
 * `$ docker run -ti --name btcdev -P -p 49020:19000 jimtou/bitcoinx:version2`
 
 ## Manual run
